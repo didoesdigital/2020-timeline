@@ -207,3 +207,18 @@ text {
     /* text-align: center; */
   }
 }
+
+#events-filter {
+  display: inline-flex;
+  gap: 24px;
+  padding: 8px 0;
+}
+
+fieldset {
+  border: none;
+  margin-top: 24px;
+}
+
+legend {
+  font-weight: 600;
+}

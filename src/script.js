@@ -39,7 +39,15 @@ const labelSeparation = 24;
 const width = window.innerWidth;
 
 function init() {
-  const data = timelineData;
+  const radioValue = document.querySelector(
+    'input[type="radio"]:checked'
+  )?.value;
+  const data =
+    radioValue === "shared"
+      ? timelineData.filter((d) => d.sharedOrPersonal === "Shared")
+      : radioValue === "personal"
+      ? timelineData.filter((d) => d.sharedOrPersonal === "Personal")
+      : timelineData;
 
   const params = {};
 
@@ -474,4 +482,33 @@ function isDateInLockdown(date, lockdownData) {
     }
   }
   return false;
+}
+
+// Note: using `.html` is not always safe and instead of cleaning and re-building the whole viz, it would be better to use D3's join pattern to update the data and DOM elements. This is a quick approach to migrate from the original code.
+function clean() {
+  d3.select("svg#timeline").selectAll("*").html(null);
+  d3.select("#viz").html`<figure style="max-width: 100%">
+  <div id="wrapper" class="wrapper">
+    <div id="tooltip" class="tooltip" aria-hidden="true">
+      <div class="tooltip-date">
+        <span id="date"></span>
+      </div>
+      <div class="tooltip-name">
+        <span id="name"></span>
+      </div>
+      <div class="tooltip-description">
+        <span id="description"></span>
+      </div>
+    </div>
+    <svg id="timeline"></svg>
+  </div>
+</figure>
+    `;
+}
+
+for (const elem of document.querySelectorAll('input[type="radio"]')) {
+  elem.addEventListener("input", (event) => {
+    clean();
+    init();
+  });
 }
