@@ -63,6 +63,7 @@ tspan.sr-only {
   opacity: 0.01;
 }
 
+#data-table,
 #viz,
 #intro,
 #outro {
@@ -221,4 +222,51 @@ fieldset {
 
 legend {
   font-weight: 600;
+}
+
+details summary {
+  cursor: pointer;
+}
+
+details summary > * {
+  display: inline;
+}
+
+.table-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 240px;
+  min-width: 240px;
+}
+
+td:first-of-type {
+  font-weight: 700;
+}
+
+caption {
+  max-width: 35em;
+  padding: 0 0.5rem;
+  text-align: left;
+  white-space: initial;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+th {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--coolgrey-400);
+}
+td {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--coolgrey-400);
+}
+thead {
+  margin-top: 0.5rem;
+  background-color: var(--coolgrey-200);
 }

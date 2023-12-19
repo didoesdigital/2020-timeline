@@ -39,6 +39,10 @@ const labelSeparation = 24;
 const width = window.innerWidth;
 
 function init() {
+  makeViz();
+}
+
+function makeViz() {
   const radioValue = document.querySelector(
     'input[type="radio"]:checked'
   )?.value;
@@ -509,6 +513,12 @@ function clean() {
 for (const elem of document.querySelectorAll('input[type="radio"]')) {
   elem.addEventListener("input", (event) => {
     clean();
-    init();
+    makeViz();
   });
 }
+
+d3.select(".table-container")
+  .style("width", `${width >= 768 ? 768 : 360}px`)
+  .style("min-width", `${width >= 768 ? 768 : 360}px`);
+
+d3.select("caption").style("width", `${width >= 768 ? 768 : 360}px`);
