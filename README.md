@@ -19,3 +19,8 @@ The code is licensed under MIT License, as shown in [LICENSE.md](./LICENSE.md).
 ## Author
 
 [Di](https://didoesdigital.com)
+
+## Screenshot
+
+![Melbourne in 2020 timeline](./src/images/DiDoesDigital2020Timeline.png)
+
