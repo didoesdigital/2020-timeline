@@ -4,13 +4,9 @@ Melbourne in 2020. One Aussie’s effort to make sense of it.
 
 This project uses [D3](https://d3js.org/) and vanilla JavaScript.
 
-## Setup
-
-- [yarn](https://yarnpkg.com/lang/en/docs/install/) to install dev dependencies like live-server for hot reloading in local development
-
 ## Development
 
-- `yarn dev`
+- `npx live-server src` to run live-server for hot reloading in local development
 
 ## License
 
